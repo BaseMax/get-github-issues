@@ -1,7 +1,8 @@
 import os
 import sys
-from github import Github
+
 from dotenv import load_dotenv
+from github import Github
 
 load_dotenv()
 
@@ -16,7 +17,7 @@ else:
     labels = os.getenv("LABELS").split(",")
 
 # Replace with your GitHub access token
-ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+access_token = os.getenv("ACCESS_TOKEN")
 
 # Create a GitHub instance using the access token
 g = Github(ACCESS_TOKEN)
