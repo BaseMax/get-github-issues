@@ -12,8 +12,8 @@ ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 g = Github(ACCESS_TOKEN)
 
 # Replace with your repository name and owner
-repository_owner = "AliiAHmadi"
-repository_name = "Zero-Framework"
+repository_owner = "BaseMax"
+repository_name = "get-github-issues"
 labels = ["test-label"]
 state = "open"
 
