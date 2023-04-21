@@ -13,7 +13,7 @@ g = Github(ACCESS_TOKEN)
 # Replace with your repository name and owner
 repository_owner = "BaseMax"
 repository_name = "get-github-issues"
-labels = []
+labels = ["test-label"]
 state = "open"
 
 
