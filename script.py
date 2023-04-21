@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
+# Check arguments and OS ENV
 if len(sys.argv) > 1:
     repository_owner = sys.argv[1]
     repository_name = sys.argv[2]
@@ -28,6 +28,7 @@ repo = g.get_repo(f"{repository_owner}/{repository_name}")
 state = "open"
 issues = repo.get_issues(labels=labels, state=state, sort='updated')
 
+# Log repository
 print(repo)
 
 # Loop through each issue and get its comments
