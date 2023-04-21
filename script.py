@@ -1,6 +1,7 @@
+import os
+import re
 from github import Github
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
@@ -16,16 +17,20 @@ repository_name = "Zero-Framework"
 labels = ["test-label"]
 state = "open"
 
-
 # Get the repository object
 repo = g.get_repo(f"{repository_owner}/{repository_name}")
 print(repo)
 
 # Get all the issues in the repository with the "auto-release" label
-issues = repo.get_issues(labels=labels, state=state)
+issues = repo.get_issues(labels=labels, state=state, sort='updated')
 
 # Loop through each issue and get its comments
 for issue in issues:
     print(f"Issue: {issue.title}")
-    for comment in issue.get_comments():
+    print("body: <<<", issue.body, ">>>")
+    
+    comments = list(issue.get_comments()).reverse()
+    for comment in comments:
         print(f"\tComment: {comment.body}")
+
+    print("\n\n")
