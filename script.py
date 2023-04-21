@@ -5,27 +5,15 @@ import sys
 
 load_dotenv()
 
-def get_owner():
-    owner = os.getenv("REPO_OWNER")
-    if owner:
-        return owner
-    return sys.argv[1]
 
-
-
-def get_repo_name():
-    name = os.getenv("REPO_NAME")
-    if name:
-        return name
-    return sys.argv[2]
-
-
-def get_labels():
-    labels = os.getenv("LABELS")
-    if labels:
-        return labels.split(",")
-    print(sys.argv[3].split(","))
-
+if len(sys.argv) > 1:
+    repository_owner = sys.argv[1]
+    repository_name = sys.argv[2]
+    labels = sys.argv[3].split(",")
+else:
+    repository_owner = os.getenv("REPO_OWNER")
+    repository_name = os.getenv("REPO_NAME")
+    labels = os.getenv("LABELS").split(",")
 
 # Replace with your GitHub access token
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
@@ -34,9 +22,9 @@ ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 g = Github(ACCESS_TOKEN)
 
 # Replace with your repository name and owner
-repository_owner = get_owner()
-repository_name = get_repo_name()
-labels = get_labels()
+
+
+
 state = "open"
 
 # Get the repository object
