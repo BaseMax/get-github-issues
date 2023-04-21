@@ -41,7 +41,7 @@ export ACCESS_TOKEN=YOUR_TOKEN_HERE
 
 Run the script:
 ```bash
-python get-github-issues.py <owner> <repository> <labels>
+python script.py <owner> <repository> <labels>
 ```
 
 Replace <owner> with the name of the repository owner, <repository> with the name of the repository, and <labels> with a comma-separated list of labels you want to filter by. For example:
