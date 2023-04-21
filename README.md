@@ -5,7 +5,7 @@ A Python script to get a list of all open issues in a repository with specific l
 ## Prerequisites
 
 - Python 3.x
-- GitHub Personal Access Token
+- GitHub Personal Access Token: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
 ## Installation
 
