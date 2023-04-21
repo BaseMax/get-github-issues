@@ -15,18 +15,28 @@ git clone https://github.com/BaseMax/get-github-issues.git
 cd get-github-issues
 ```
 
+Create an virtual envirement:
+```console
+python -m venv venv
+```
+
 Install the dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
+At last run activate binary file to enable virtual envirenment:
+```console
+source venv/bin/activate
+```
+
 ## Usage
 
-Set the GITHUB_TOKEN (GitHub Personal Access Token) variable inside `.env` file:
+Set the ACCESS_TOKEN (GitHub Personal Access Token) variable inside `.env` file:
 
 Or
 ```bash
-export GITHUB_TOKEN=YOUR_TOKEN_HERE
+export ACCESS_TOKEN=YOUR_TOKEN_HERE
 ```
 
 Run the script:
@@ -37,7 +47,7 @@ python get-github-issues.py <owner> <repository> <labels>
 Replace <owner> with the name of the repository owner, <repository> with the name of the repository, and <labels> with a comma-separated list of labels you want to filter by. For example:
 
 ```bash
-python get-github-issues.py BaseMax get-github-issues "bug, enhancement"
+python get-github-issues.py BaseMax get-github-issues "bug,enhancement"
 ```
   
 This will fetch all open issues in the BaseMax/get-github-issues repository with the labels "bug" or "enhancement".
