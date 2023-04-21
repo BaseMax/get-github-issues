@@ -1,7 +1,7 @@
 import os
+import sys
 from github import Github
 from dotenv import load_dotenv
-import sys
 
 load_dotenv()
 
