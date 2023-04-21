@@ -1,7 +1,8 @@
 import os
 import sys
-from github import Github
+
 from dotenv import load_dotenv
+from github import Github
 
 load_dotenv()
 
@@ -16,13 +17,13 @@ else:
     labels = os.getenv("LABELS").split(",")
 
 # Replace with your GitHub access token
-ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+access_token  = os.getenv("ACCESS_TOKEN")
 
 # Create a GitHub instance using the access token
-g = Github(ACCESS_TOKEN)
+github_instance = Github(access_token)
 
 # Get the repository object
-repo = g.get_repo(f"{repository_owner}/{repository_name}")
+repo = github_instance.get_repo(f"{repository_owner}/{repository_name}")
 
 # Get all the issues in the repository with the "auto-release" label
 state = "open"
