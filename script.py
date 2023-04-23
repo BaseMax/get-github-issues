@@ -7,13 +7,22 @@ load_dotenv()
 
 # Check arguments and OS ENV
 if len(sys.argv) > 1:
-    repository_owner = sys.argv[1]
-    repository_name = sys.argv[2]
-    labels = sys.argv[3].split(",")
+    if len(sys.argv) == 3:
+        repository_owner = sys.argv[1]
+        repository_name = sys.argv[2]
+        labels = sys.argv[3].split(",")
+    else:
+        print("Error: Invalid number of arguments")
+        sys.exit(1)
 else:
     repository_owner = os.getenv("REPO_OWNER")
     repository_name = os.getenv("REPO_NAME")
-    labels = os.getenv("LABELS").split(",")
+    labels = os.getenv("LABELS")
+    if labels:
+        labels = labels.split(",")
+    else:
+        print("Error: No labels provided")
+        sys.exit(1)
 
 # Replace with your GitHub access token
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
