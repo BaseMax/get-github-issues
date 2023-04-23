@@ -47,10 +47,8 @@ for issue in issues:
     print(f"Issue: {issue.title}")
     print("body: <<<", issue.body, ">>>")
     
-    print(issue)
     comments = list(issue.get_comments()).reverse()
     comments = issue.get_comments()
-    print(comments.totalCount)
     if comments.totalCount > 0:
         # reverse iterate over comments
         for i in range(comments.totalCount - 1, -1, -1):
