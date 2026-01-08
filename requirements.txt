@@ -17,6 +17,6 @@ PyJWT==2.6.0
 PyNaCl==1.6.2
 requests==2.32.4
 typing_extensions==4.5.0
-urllib3==2.6.0
+urllib3==2.6.3
 wrapt==1.15.0
 yarl==1.8.2
